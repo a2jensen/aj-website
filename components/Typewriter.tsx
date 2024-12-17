@@ -10,7 +10,7 @@ const Typewriter: React.FC<TypeWriterProps> = ({ text, delay }) => {
   const [currentText, setCurrentText] = useState<string>('');
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  // Typing logic goes here'
+  // Typing logic goes here
   useEffect(() => {
     if (currentIndex < text.length) {
       const timeout = setTimeout(() => {
