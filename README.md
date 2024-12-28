@@ -10,6 +10,7 @@ Planned Updates:
 -Integrate Github REST API to display project repo's directly on the website. (projects, leetcode obsidian vault)
 -Incorporate Three.js UI components
 -Incorporate Google Spreadsheets as the CMS system
+-Add in extra/misc section : photography + spotify!
 -Expand on CSE 100 projects, create a web app for the huffman encoding project
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
