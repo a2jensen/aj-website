@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 
 const Navbar = () => {
     return (
@@ -7,7 +7,7 @@ const Navbar = () => {
                 <li className="mx-2 ml-8">about //</li>
                 <li className="mx-2">experience //</li>
                 <li className="mx-2">projects //</li>
-                <li className="mx-2">minigames</li>
+                <Link href={"/wordle"} className="mx-2">minigames</Link>
             </ul>
         </div>
     )

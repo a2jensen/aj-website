@@ -12,6 +12,7 @@ Planned Updates:
 -Incorporate Google Spreadsheets as the CMS system
 -Add in extra/misc section : photography + spotify!
 -Expand on CSE 100 projects, create a web app for the huffman encoding project
+-Expand on CSE 30 Game Of Life PA, creating a web app for game of life PA3
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
