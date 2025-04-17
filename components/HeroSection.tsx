@@ -12,8 +12,8 @@ const HeroSection = () => {
     <div className="relative h-screen w-full flex items-center bg-black overflow-hidden">
       {/* Main name display - positioned on the left */}
       <div className="absolute inset-0 flex items-center pointer-events-none z-0">
-      <div className={`z-10 transition-all duration-1000 transform ${loaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'} ml-16 md:ml-24 lg:ml-32`}>
-        <h1 className="text-[80vw] md:text-[80vw] lg:text-[80vw] font-black tracking-tighter text-blue-600 leading-none">
+      <div className={`z-10 transition-all duration-1000 transform ${loaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'} md:ml-12 lg:ml-16`}>
+        <h1 className="text-[80vw] md:text-[80vw] lg:text-[75vw] font-black tracking-tighter text-blue-600 leading-none font-serif">
           AJ
         </h1>
       </div>
@@ -50,11 +50,11 @@ const HeroSection = () => {
         <a href="#experience" className={`transition-all duration-1000 delay-400 transform ${loaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
           experience
         </a>
-        <a href="#projects" className={`transition-all duration-1000 delay-500 transform ${loaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+        <a href="#project" className={`transition-all duration-1000 delay-500 transform ${loaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
           projects
         </a>
-        <a href="/" className={`transition-all duration-1000 delay-600 transform ${loaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-          archive
+        <a href="#dj" className={`transition-all duration-1000 delay-600 transform ${loaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
+          dj
         </a>
       </div>
     </div>
