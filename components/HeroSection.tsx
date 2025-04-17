@@ -16,9 +16,6 @@ const HeroSection = () => {
         <h1 className="text-[80vw] md:text-[80vw] lg:text-[80vw] font-black tracking-tighter text-blue-600 leading-none">
           AJ
         </h1>
-        <p className="text-blue-700 text-xl md:text-2xl lg:mt-[-20px] md:mt-[-30px] ml-2 tracking-wide">
-          Angelo Jensen
-        </p>
       </div>
       </div>
 
@@ -49,7 +46,7 @@ const HeroSection = () => {
       </div>
 
       {/* Navigation links - centered at bottom */}
-      <div className="absolute bottom-20 left-0 right-0 flex justify-center space-x-16 text-white text-xl">
+      <div className="absolute bottom-20 left-0 right-0 flex justify-center space-x-16 text-white sm:text-sm md:text-base lg:text-xl">
         <a href="#experience" className={`transition-all duration-1000 delay-400 transform ${loaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
           experience
         </a>
