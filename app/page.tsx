@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-slate-400">
       <Navbar />
       <About />
       <Experience />
