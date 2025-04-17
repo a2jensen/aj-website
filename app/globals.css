@@ -18,10 +18,30 @@ body {
   color: var(--foreground);
   background: var(--background);
   @apply font-mono;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Custom animation for text reveal */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Section anchors for smooth scrolling */
+#about, #experience, #projects {
+  scroll-margin-top: 80px;
 }
