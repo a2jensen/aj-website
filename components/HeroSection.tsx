@@ -54,7 +54,7 @@ const HeroSection = () => {
           projects
         </a>
         <a href="#dj" className={`transition-all duration-1000 delay-600 transform ${loaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-          dj
+          radio
         </a>
       </div>
     </div>
