@@ -13,7 +13,7 @@ const HeroSection = () => {
       {/* Main name display - positioned on the left */}
       <div className="absolute inset-0 flex items-center pointer-events-none z-0">
       <div className={`z-10 transition-all duration-1000 transform ${loaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'} md:ml-12 lg:ml-16`}>
-        <p className="text-[100vw] md:text-[90vw] lg:text-[75vw] tracking-tighter text-blue-600 leading-none">
+        <p className="text-[85vw] md:text-[90vw] lg:text-[75vw] tracking-tighter text-blue-600 leading-none">
           AJ
         </p>
       </div>
