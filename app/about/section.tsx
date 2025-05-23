@@ -10,7 +10,6 @@ const About = () => {
                     </p>
                     <p className="text-lg opacity-80">
                         CS @ UCSD <br/>
-                        Passion for creating (0v0)
                     </p>
                 </div>
             </div>

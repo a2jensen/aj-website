@@ -4,15 +4,17 @@ import Projects from "./projects/section";
 import HeroSection from "@/components/HeroSection";
 import About from "./about/section";
 import DJ from "./dj/section";
+import { dataFetch } from "./lib/data-fetch";
 
-const Home = () => {
+const Home = async () => {
+  const data = await dataFetch()
   return (
     <div className="min-h-screen">
       <HeroSection />
       <About/>
-      <DJ/>
-      <Experience />
-      <Projects />
+      <Experience experienceData={data.expTitles}/>
+      <Projects projectData={data.projectTitles}/>
+      <DJ spotifyLinks={data.spotifyLinks}/>
     </div>
   );
 }
