@@ -18,8 +18,12 @@ const HeroSection = () => {
           loaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
         } ml-4 md:ml-12 lg:ml-16`}
       >
-        <p className="text-[42vw] md:text-[90vw] lg:text-[75vw] tracking-tighter text-white-600 leading-none">
+        <p className="text-[85vw] md:text-[90vw] lg:hidden tracking-tighter text-blue-600 leading-none">
           AJ
+        </p>
+        {/* Show "Angelo Jensen" on large screens */}
+        <p className="hidden lg:block text-[10vw] tracking-tighter text-blue-600 leading-none">
+          Angelo Jensen
         </p>
       </div>
     </div>
