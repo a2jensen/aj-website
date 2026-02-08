@@ -1,0 +1,49 @@
+{
+  "experience": [
+    {
+      "title": "Software Engineer Intern",
+      "company": "Acme Corp",
+      "dates": "Jun 2025 - Sep 2025",
+      "description": "Worked on backend services and distributed systems."
+    },
+    {
+      "title": "Teaching Assistant",
+      "company": "UC San Diego",
+      "dates": "Jan 2025 - Jun 2025",
+      "description": "TA for introductory computer science courses."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Project Alpha",
+      "description": "A distributed task queue built with Go.",
+      "url": "https://github.com/a2jensen/project-alpha",
+      "image": "/images/project-alpha.png",
+      "source": "open"
+    },
+    {
+      "name": "Project Beta",
+      "description": "Real-time collaboration tool.",
+      "url": "https://github.com/a2jensen/project-beta",
+      "image": "/images/project-beta.png",
+      "source": "closed"
+    },
+    {
+      "name": "Project Gamma",
+      "description": "CLI tool for managing cloud resources.",
+      "url": "https://github.com/a2jensen/project-gamma",
+      "image": "/images/project-gamma.png",
+      "source": "open"
+    }
+  ],
+  "art": [
+    {
+      "title": "Piece One",
+      "image": "/images/art-1.png"
+    },
+    {
+      "title": "Piece Two",
+      "image": "/images/art-2.png"
+    }
+  ]
+}

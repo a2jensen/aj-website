@@ -1,0 +1,52 @@
+---
+import data from '../data/data.json';
+const { experience } = data;
+---
+<!-- Experience -->
+<section id="experience">
+    <h2>experience</h2>
+    <div class="experience-list">
+        {experience.map((exp) => (
+            <div class="experience-item">
+                <div class="experience-header">
+                    <strong>{exp.title}</strong>
+                    <span class="dates">{exp.dates}</span>
+                </div>
+                <span class="company">{exp.company}</span>
+                <p>{exp.description}</p>
+            </div>
+        ))}
+    </div>
+</section>
+
+<style>
+    /* Experience */
+	#experience {
+		margin-bottom: 60px;
+	}
+
+	.experience-item {
+		margin-bottom: 20px;
+	}
+
+	.experience-header {
+		text-align: center;
+		gap: 8px;
+	}
+
+	.dates {
+		font-size: 13px;
+		opacity: 0.6;
+	}
+
+	.company {
+		font-size: 14px;
+		opacity: 0.7;
+	}
+
+	.experience-item p {
+		margin: 4px 0 0;
+		font-size: 14px;
+		line-height: 1.5;
+	}
+</style>
