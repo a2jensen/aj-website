@@ -13,5 +13,7 @@ export default defineConfig({
             cssVariable:"--font-jetbrains-mono"
         }
     ]
-    }
+    },
+    site: 'https://a2jensen.github.io',
+    base: '/aj-website'
 });
