@@ -21,10 +21,6 @@ jobs:
         uses: actions/checkout@v5
       - name: Install, build, and upload your site
         uses: withastro/action@v5
-        with:
-          path: ./astro
-        # env:
-          # PUBLIC_POKEAPI: 'https://pokeapi.co/api/v2' # Use single quotation marks for the variable value. (optional)
 
   deploy:
     needs: build

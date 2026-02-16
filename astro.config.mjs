@@ -14,6 +14,5 @@ export default defineConfig({
         }
     ]
     },
-    site: 'https://a2jensen.github.io',
-    base: '/aj-website'
+    site: 'https://angelo-j.com'
 });
