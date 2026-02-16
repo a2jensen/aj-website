@@ -24,109 +24,109 @@
       "name": "TritonSEA",
       "description": "Enrollment platform for UCSD students. A helpful resource to help plan and see course data.",
       "url": "https://triton-sea.com/",
-      "image": "/images/triton-sea.png",
+      "image": "/aj-website/images/triton-sea.png",
       "tech": ["Nodejs, Ubuntu, Python, Typescript, Postgres, Docker, Nextjs"]
     },
     {
       "name": "ASPEN",
       "description": "JupyterLab extension used to help manage code within scientific notebooks.",
       "url": "https://github.com/a2jensen/aspen",
-      "image": "/images/aspen.png",
+      "image": "/aj-website/images/aspen.png",
       "tech": ["Typescript, Jupyterlab API, REACT, Conda"]
     },
     {
       "name": "KP Website",
       "description": "Website made for the Filipino Org @ UCSD.",
       "url": "https://www.kpucsd.com/",
-      "image": "/images/kp.png",
+      "image": "/aj-website/images/kp.png",
       "tech": ["Nextjs, Vercel, Google Apps Script"]
     },
     {
       "name": "Server-Side Website",
       "description": "Website hosted on Apache. Learning server-side analytics with this project.",
       "url": "https://angelo-j.xyz/",
-      "image": "/images/135.png",
+      "image": "/aj-website/images/135.png",
       "tech": ["Apache, Nodejs, Google Analytics, Matomo"]
     },
     {
       "name": "Pokedex CLI Tool",
       "description": "Go CLI tool with PokeAPI integration. Catch pokemon!",
       "url": "https://github.com/a2jensen/pokedex/tree/main/pokedex-server",
-      "image": "/images/pokedex.png",
+      "image": "/aj-website/images/pokedex.png",
       "tech": ["Golang"]
     },
     {
       "name": "Memo",
       "description": "Markdown note taking web app with AI contextual awareness. Made during TritonHacks 2025.",
       "url": "https://devpost.com/software/memo-riztdm",
-      "image": "/images/memo.png",
+      "image": "/aj-website/images/memo.png",
       "tech": ["Nextjs, Supabase, Gemini"]
     },
     {
       "name": "TideWatch",
       "description": "Community web app for UCSD students to help quickly notify of emergencies. Made during CSES Hacks 2026.",
       "url": "https://devpost.com/software/tidewatch",
-      "image": "/images/tidewatch.png",
+      "image": "/aj-website/images/tidewatch.png",
       "tech": ["Nextjs, Firebase, Computer Vision"]
     },
     {
       "name": "Optimized Matrix Multiply",
       "description": "Implemented optimized matrix multiply (naive -> tiled) during my parallel programming course.",
       "url": "",
-      "image": "/images/160.png",
+      "image": "/aj-website/images/160.png",
       "tech": ["C++"]
     },
     {
       "name": "Huffman Compression Tool",
       "description": "Implementation of a file compression tool using various data structures and algos.",
       "url": "",
-      "image": "/images/100.png",
+      "image": "/aj-website/images/100.png",
       "tech": ["C++"]
     }, 
     {
       "name": "Yelp Microservice Application",
       "description": "Microservice application with a dynamic resource controller(currently WIP!)",
       "url": "https://angelo-j.xyz/",
-      "image": "/images/golang.png",
+      "image": "/aj-website/images/golang.png",
       "tech": ["Golang, Docker, Kubernetes, GCP"]
     }
   ],
   "art": [
     {
       "title": "",
-      "image": "/images/spring.png"
+      "image": "/aj-website/images/spring.png"
     },
     {
       "title": "",
-      "image": "/images/fall.png"
+      "image": "/aj-website/images/fall.png"
     },
     {
       "title": "",
-      "image": "/images/jeju1.png"
+      "image": "/aj-website/images/jeju1.png"
     },
     {
       "title": "",
-      "image": "/images/mountain.png"
+      "image": "/aj-website/images/mountain.png"
     },
     {
       "title": "",
-      "image": "/images/mountain2.png"
+      "image": "/aj-website/images/mountain2.png"
     },
     {
       "title": "",
-      "image": "/images/seoul-gameroom.png"
+      "image": "/aj-website/images/seoul-gameroom.png"
     },
     {
       "title": "",
-      "image": "/images/shibuya-tower.png"
+      "image": "/aj-website/images/shibuya-tower.png"
     },
     {
       "title": "",
-      "image": "/images/tahoe.png"
+      "image": "/aj-website/images/tahoe.png"
     },
     {
       "title": "",
-      "image": "/images/tokyo-train.png"
+      "image": "/aj-website/images/tokyo-train.png"
     }
   ]
 }
