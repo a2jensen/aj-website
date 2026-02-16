@@ -1,4 +1,4 @@
-# Notes
+### Personal Website
 
-Use Vanta.js for the new website.
-Migration from Nextjs to Astro underway.
+
+Made with Astro + added analytic tracking via Plausible.
