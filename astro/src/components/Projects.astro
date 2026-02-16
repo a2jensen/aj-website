@@ -14,11 +14,11 @@ const { projects } = data;
 					</div>
 					<div class="project-info">
 						<span class="project-name">{project.name}</span>
-						<span class={`badge ${project.source}`}>
-							{project.source === 'open' ? 'open source' : 'closed source'}
-						</span>
 					</div>
 					<p class="project-desc">{project.description}</p>
+					{project.tech.length > 0 && (
+						<p class="project-tech">{project.tech.join(', ')}</p>
+					)}
 				</a>
 			))}
 		</div>
@@ -74,21 +74,11 @@ const { projects } = data;
 		font-size: 15px;
 	}
 
-	.badge {
-		font-size: 11px;
-		padding: 2px 8px;
-		border-radius: 9999px;
-		border: 1px solid;
-	}
-
-	.badge.open {
-		color: #16a34a;
-		border-color: #16a34a;
-	}
-
-	.badge.closed {
-		color: #888;
-		border-color: #ccc;
+	.project-tech {
+		font-size: 10px;
+		padding: 0 14px 14px;
+		margin: 0;
+		opacity: 0.5;
 	}
 
 	.project-desc {

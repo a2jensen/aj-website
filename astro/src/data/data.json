@@ -2,48 +2,131 @@
   "experience": [
     {
       "title": "Software Engineer Intern",
-      "company": "Acme Corp",
-      "dates": "Jun 2025 - Sep 2025",
-      "description": "Worked on backend services and distributed systems."
+      "company": "SDSC",
+      "dates": "Jun 2024 - Sep 2024",
+      "description": "Worked on backend services and data pipelines for TritonSEA."
     },
     {
-      "title": "Teaching Assistant",
+      "title": "Software Engineer Intern",
+      "company": "SDSC",
+      "dates": "Oct 2024 - Jun 2025",
+      "description": "Assisted with refactoring and improving internal platforms."
+    }, 
+    {
+      "title": "Research Assistant",
       "company": "UC San Diego",
-      "dates": "Jan 2025 - Jun 2025",
-      "description": "TA for introductory computer science courses. \n kmdasdsa"
+      "dates": "Sep 2024 - Aug 2025",
+      "description": "Worked on ASPEN, a Jupyter notebook extension for managing code clones."
     }
   ],
   "projects": [
     {
-      "name": "Project Alpha",
-      "description": "A distributed task queue built with Go.",
-      "url": "https://github.com/a2jensen/project-alpha",
-      "image": "/images/project-alpha.png",
-      "source": "open"
+      "name": "TritonSEA",
+      "description": "Enrollment platform for UCSD students. A helpful resource to help plan and see course data.",
+      "url": "https://triton-sea.com/",
+      "image": "public/images/triton-sea.png",
+      "tech": ["Nodejs, Ubuntu, Python, Typescript, Postgres, Docker, Nextjs"]
     },
     {
-      "name": "Project Beta",
-      "description": "Real-time collaboration tool.",
-      "url": "https://github.com/a2jensen/project-beta",
-      "image": "/images/project-beta.png",
-      "source": "closed"
+      "name": "ASPEN",
+      "description": "JupyterLab extension used to help manage code within scientific notebooks.",
+      "url": "https://github.com/a2jensen/aspen",
+      "image": "/public/images/aspen.png",
+      "tech": ["Typescript, Jupyterlab API, REACT, Conda"]
     },
     {
-      "name": "Project Gamma",
-      "description": "CLI tool for managing cloud resources.",
-      "url": "https://github.com/a2jensen/project-gamma",
-      "image": "/images/project-gamma.png",
-      "source": "open"
+      "name": "KP Website",
+      "description": "Website made for the Filipino Org @ UCSD.",
+      "url": "https://www.kpucsd.com/",
+      "image": "/public/images/kp.png",
+      "tech": ["Nextjs, Vercel, Google Apps Script"]
+    },
+    {
+      "name": "Server-Side Website",
+      "description": "Website hosted on Apache. Learning server-side analytics with this project.",
+      "url": "https://angelo-j.xyz/",
+      "image": "/public/images/135.png",
+      "tech": ["Apache, Nodejs, Google Analytics, Matomo"]
+    },
+    {
+      "name": "Pokedex CLI Tool",
+      "description": "Go CLI tool with PokeAPI integration. Catch pokemon!",
+      "url": "https://github.com/a2jensen/pokedex/tree/main/pokedex-server",
+      "image": "/public/images/pokedex.png",
+      "tech": ["Golang"]
+    },
+    {
+      "name": "Memo",
+      "description": "Markdown note taking web app with AI contextual awareness. Made during TritonHacks 2025.",
+      "url": "https://devpost.com/software/memo-riztdm",
+      "image": "/public/images/memo.png",
+      "tech": ["Nextjs, Supabase, Gemini"]
+    },
+    {
+      "name": "TideWatch",
+      "description": "Community web app for UCSD students to help quickly notify of emergencies. Made during CSES Hacks 2026.",
+      "url": "https://devpost.com/software/tidewatch",
+      "image": "/public/images/tidewatch.png",
+      "tech": ["Nextjs, Firebase, Computer Vision"]
+    },
+    {
+      "name": "Optimized Matrix Multiply",
+      "description": "Implemented optimized matrix multiply (naive -> tiled) during my parallel programming course.",
+      "url": "",
+      "image": "/public/images/160.png",
+      "tech": ["C++"]
+    },
+    {
+      "name": "Huffman Compression Tool",
+      "description": "Implementation of a file compression tool using various data structures and algos.",
+      "url": "",
+      "image": "/public/images/100.png",
+      "tech": ["C++"]
+    }, 
+    {
+      "name": "Yelp Microservice Application",
+      "description": "Microservice application with a dynamic resource controller(currently WIP!)",
+      "url": "https://angelo-j.xyz/",
+      "image": "/public/images/golang.png",
+      "tech": ["Golang, Docker, Kubernetes, GCP"]
     }
   ],
   "art": [
     {
-      "title": "Piece One",
-      "image": "/images/art-1.png"
+      "title": "",
+      "image": "/public/images/spring.png"
     },
     {
-      "title": "Piece Two",
-      "image": "/images/art-2.png"
+      "title": "",
+      "image": "/public/images/fall.png"
+    },
+    {
+      "title": "",
+      "image": "/public/images/jeju1.png"
+    },
+    {
+      "title": "",
+      "image": "/public/images/mountain.png"
+    },
+    {
+      "title": "",
+      "image": "/public/images/mountain2.png"
+    },
+    {
+      "title": "",
+      "image": "/public/images/seoul-gameroom.png"
+    },
+    {
+      "title": "",
+      "image": "/public/images/shibuya-tower.png"
+    },
+    {
+      "title": "",
+      "image": "/public/images/tahoe.png"
+    },
+    {
+      "title": "",
+      "image": "/public/images/tokyo-train.png"
     }
   ]
 }
