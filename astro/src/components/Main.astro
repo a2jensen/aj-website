@@ -36,9 +36,9 @@ const { experience, projects, art } = data;
 	}
 	#page {
 		max-width: 900px;
-		margin: 0 auto;
-		padding: 60px 24px;
-		text-align: center;
+		margin: 0;
+		padding: 60px 24px 60px 80px;
+		text-align: left;
 	}
 
 	/* Hero */
@@ -63,8 +63,8 @@ const { experience, projects, art } = data;
 	}
 
 	.contact {
-		display: flex;
-		justify-content: center;
+
+		justify-content: flex-start;
 	}
 
 	.contact p {
@@ -82,8 +82,8 @@ const { experience, projects, art } = data;
 			padding: 40px 16px;
 		}
 
-		.projects-grid {
-			grid-template-columns: 1fr;
+		.projects-row {
+			grid-template-columns: 1fr !important;
 		}
 
 		.art-grid {
