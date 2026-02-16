@@ -1,10 +1,37 @@
 ---
 import data from '../data/data.json';
 const { art } = data;
+
+// Build alternating wave rows:
+// 3,2,1 then 1,2,3, then repeat.
+const rows: typeof art[] = [];
+let i = 0;
+let descending = true;
+while (i < art.length) {
+	const pattern = descending ? [3, 2, 1] : [1, 2, 3];
+	for (const rowSize of pattern) {
+		if (i >= art.length) break;
+		rows.push(art.slice(i, i + rowSize));
+		i += rowSize;
+	}
+	descending = !descending;
+}
 ---
 <!-- Art -->
 <section id="art">
     <h2>art</h2>
+    <div class="art-wave">
+        {rows.map((row) => (
+            <div class="art-row" style={`grid-template-columns: repeat(${row.length}, 260px);`}>
+                {row.map((piece) => (
+                    <div class="art-item">
+                        <img src={piece.image} alt={piece.title} loading="lazy" />
+                        <span class="art-title">{piece.title}</span>
+                    </div>
+                ))}
+            </div>
+        ))}
+    </div>
     <div class="art-grid">
         {art.map((piece) => (
             <div class="art-item">
@@ -17,8 +44,18 @@ const { art } = data;
 
 <style>
     /* Art */
-	.art-grid {
+	.art-wave {
+		display: block;
+	}
+
+	.art-row {
 		display: grid;
+		gap: 16px;
+		margin-bottom: 16px;
+	}
+
+	.art-grid {
+		display: none;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 16px;
 	}
@@ -40,5 +77,15 @@ const { art } = data;
 	.art-title {
 		font-size: 13px;
 		opacity: 0.7;
+	}
+
+	@media screen and (max-width: 600px) {
+		.art-wave {
+			display: none;
+		}
+
+		.art-grid {
+			display: grid;
+		}
 	}
 </style>
