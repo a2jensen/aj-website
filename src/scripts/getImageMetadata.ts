@@ -1,6 +1,6 @@
 const images = import.meta.glob<{ default: ImageMetadata }>('../images/*.*', { eager: true });
 
-export function getImage(path: string) {
+export function getImageMetadata(path: string) {
 	const filename = path.split('/').pop()!;
 	const match = Object.entries(images).find(([key]) => key.endsWith(filename));
 	// if (match) {

@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import { getImage } from '../scripts/getImage';
+import { getImageMetadata } from '../scripts/getImageMetadata';
 import data from '../data/data.json';
 const { projects } = data;
 
@@ -32,7 +32,7 @@ while (i < projects.length) {
 					{row.map((project) => (
 						<a href={project.url} class="project-card" target="_blank" rel="noopener">
 							<div class="project-image">
-								{getImage(project.image) ? <Image src={getImage(project.image)!} alt={project.name} loading="lazy" /> : <img src={project.image} alt={project.name} loading="lazy" />}
+								{<Image src={getImageMetadata(project.image)!} alt={project.name} loading="lazy" />}
 							</div>
 							<div class="project-info">
 								<span class="project-name">{project.name}</span>
@@ -50,7 +50,7 @@ while (i < projects.length) {
 			{projects.map((project) => (
 				<a href={project.url} class="project-card" target="_blank" rel="noopener">
 					<div class="project-image">
-						{getImage(project.image) ? <Image src={getImage(project.image)!} alt={project.name} loading="lazy" /> : <img src={project.image} alt={project.name} loading="lazy" />}
+						{<Image src={getImageMetadata(project.image)!} alt={project.name} loading="lazy" />}
 					</div>
 					<div class="project-info">
 						<span class="project-name">{project.name}</span>
