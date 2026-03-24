@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import { getImage } from '../scripts/getImage';
 import data from '../data/data.json';
 const { art } = data;
 
@@ -25,7 +27,7 @@ while (i < art.length) {
             <div class="art-row" style={`grid-template-columns: repeat(${row.length}, 260px);`}>
                 {row.map((piece) => (
                     <div class="art-item">
-                        <img src={piece.image} alt={piece.title} loading="lazy" />
+                        {getImage(piece.image) ? <Image src={getImage(piece.image)!} alt={piece.title} loading="lazy" /> : <img src={piece.image} alt={piece.title} loading="lazy" />}
                         <span class="art-title">{piece.title}</span>
                     </div>
                 ))}
@@ -35,7 +37,7 @@ while (i < art.length) {
     <div class="art-grid">
         {art.map((piece) => (
             <div class="art-item">
-                <img src={piece.image} alt={piece.title} loading="lazy" />
+                {getImage(piece.image) ? <Image src={getImage(piece.image)!} alt={piece.title} loading="lazy" /> : <img src={piece.image} alt={piece.title} loading="lazy" />}
                 <span class="art-title">{piece.title}</span>
             </div>
         ))}
