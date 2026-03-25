@@ -38,7 +38,7 @@ while (i < art.length) {
     <div class="art-grid">
         {art.map((piece) => (
             <div class="art-item">
-                {<Image src={getImageMetadata(piece.image)!} height="300" alt={piece.title} loading="lazy"/>}
+                {<Image src={getImageMetadata(piece.image)!} alt={piece.title} loading="lazy"/>}
                 <span class="art-title">{piece.title}</span>
             </div>
         ))}
