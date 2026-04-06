@@ -4,13 +4,13 @@ import { getImageMetadata } from '../scripts/getImageMetadata';
 import data from '../data/data.json';
 const { projects } = data;
 
-// Build triangle rows: 2, 3, 4, 5, 6, 6, 6...
+// Build triangle rows: 2, 3, 4, 5, 5, 5...
 // If leftover can't fill the next row, append to current row
 const rows: typeof projects[] = [];
 let i = 0;
 let rowSize = 2;
 while (i < projects.length) {
-	const nextRowSize = Math.min(rowSize + 1, 6);
+	const nextRowSize = Math.min(rowSize + 1, 5);
 	const remaining = projects.length - i - rowSize;
 	if (remaining > 0 && remaining < nextRowSize) {
 		rows.push(projects.slice(i, i + rowSize + remaining));
@@ -19,7 +19,7 @@ while (i < projects.length) {
 		rows.push(projects.slice(i, i + rowSize));
 		i += rowSize;
 	}
-	rowSize = Math.min(rowSize + 1, 6);
+	rowSize = Math.min(rowSize + 1, 5);
 }
 ---
 
