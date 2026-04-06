@@ -10,11 +10,11 @@ const rows: typeof projects[] = [];
 let i = 0;
 let rowSize = 2;
 while (i < projects.length) {
-	const nextRowSize = Math.min(rowSize + 1, 5);
 	const remaining = projects.length - i - rowSize;
-	if (remaining > 0 && remaining < nextRowSize) {
-		rows.push(projects.slice(i, i + rowSize + remaining));
-		i += rowSize + remaining;
+	if (remaining === 1) {
+		// avoid a lone row of 1 by absorbing it into the current row
+		rows.push(projects.slice(i, i + rowSize + 1));
+		i += rowSize + 1;
 	} else {
 		rows.push(projects.slice(i, i + rowSize));
 		i += rowSize;
