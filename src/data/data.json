@@ -41,6 +41,27 @@
       "image": "/images/kp.png",
       "tech": ["Nextjs, Vercel, Google Apps Script"]
     },
+      {
+      "name": "Yelp Microservice Application",
+      "description": "Microservice deployed on GCP. Focused on caching, analytics, and service implementation",
+      "url": "https://angelo-j.xyz/",
+      "image": "/images/golang.png",
+      "tech": ["Golang, Docker, Kubernetes, GCP"]
+    },
+    {
+      "name": "Linux Cgroups Controller",
+      "description": "Dynamic Resource Controller built in Golang to manage scheduling of high workload processes.",
+      "url": "https://github.com/a2jensen/dynamic-resource-controller",
+      "image": "/images/golang.png",
+      "tech": ["Golang, Linux Cgroups, Bash"]
+    },
+    {
+      "name": "Care Watch",
+      "description": "Implemented OpenClaw and a CV model on the edge to create a smart fall watch system.",
+      "url": "https://devpost.com/software/carewatch-nwfrsl",
+      "image": "/images/golang.png",
+      "tech": ["Rubiks Pi 3, OpenClaw, TailScale, OpenCV, NextJs"]
+    },
     {
       "name": "Server-Side Website",
       "description": "Website hosted on Apache. Learning server-side analytics with this project.",
@@ -82,13 +103,6 @@
       "url": "",
       "image": "/images/100.png",
       "tech": ["C++"]
-    }, 
-    {
-      "name": "Yelp Microservice Application",
-      "description": "Microservice application with a dynamic resource controller(currently WIP!)",
-      "url": "https://angelo-j.xyz/",
-      "image": "/images/golang.png",
-      "tech": ["Golang, Docker, Kubernetes, GCP"]
     }
   ],
   "art": [
