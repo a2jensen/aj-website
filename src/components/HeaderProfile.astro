@@ -1,13 +1,6 @@
 ---
-import data from '../data/data.json';
-import { Font } from 'astro:assets';
-import Projects from './Projects.astro';
-import Experience from './Experience.astro'
-import Art from './Art.astro'
-const { experience, projects, art } = data;
 ---
-<Font cssVariable="--font-jetbrains-mono" preload />
-<div id="page">
+<div>
 	<!-- Hero -->
 	<header id="hero">
 		<h1>Angelo Jensen</h1>
@@ -17,30 +10,12 @@ const { experience, projects, art } = data;
 			<p>github: <a href="https://github.com/a2jensen" target="_blank" rel="noopener">a2jensen</a></p>
 			<p>email: <a href="mailto:angelojensen17@gmail.com">angelojensen17@gmail.com</a></p>
 			<p>linkedin: <a href="https://linkedin.com/in/angelo-jensen" target="_blank" rel="noopener">angelojensen</a></p>
+			<p>youtube: <a href="https://youtube.com/@aaangeloj?si=dfHUb4uU-FK9LHv1" target="_blank" rel="noopener">aaangeloj</a></p>
 		</div>
 	</header>
-
-	<!-- Experience -->
-	<Experience />
-
-	<!-- Projects -->
-	<Projects />
-
-	<!-- Art -->
-	<Art />
 </div>
 
 <style>
-	body {
-    font-family: var(--font-jetbrains-mono);
-	}
-	#page {
-		max-width: 900px;
-		margin: 0;
-		padding: 60px 24px 60px 80px;
-		text-align: left;
-	}
-
 	/* Hero */
 	#hero {
 		margin-bottom: 60px;
@@ -63,24 +38,11 @@ const { experience, projects, art } = data;
 	}
 
 	.contact {
-
 		justify-content: flex-start;
 	}
 
 	.contact p {
 		margin: 8px;
 		font-size: 14px;
-	}
-
-	.contact a {
-		color: inherit;
-	}
-
-	/* Mobile */
-	@media screen and (max-width: 600px) {
-		#page {
-			padding: 40px 16px;
-		}
-
 	}
 </style>

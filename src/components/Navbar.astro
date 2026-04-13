@@ -1,0 +1,38 @@
+<nav id="navbar">
+    <a href="/" class="nav-home">home</a>
+	<a href="/notes" class="nav-home">notes</a>
+    <a href="/projects" class="nav-home">projects</a>
+    <a href="/art" class="nav-home">art</a>
+</nav>
+
+<style>
+	#navbar {
+        text-align: right;
+		position: sticky;
+		top: 0;
+		z-index: 100;
+		padding: 14px 80px;
+		background: #fff;
+		font-family: var(--font-jetbrains-mono);
+		display: flex;
+		justify-content: flex-end;
+		gap: 40px;
+	}
+
+	.nav-home {
+		font-size: 20px;
+		font-weight: 600;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.nav-home:hover {
+		opacity: 0.6;
+	}
+
+	@media screen and (max-width: 600px) {
+		#navbar {
+			padding: 14px 16px;
+		}
+	}
+</style>

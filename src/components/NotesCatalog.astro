@@ -1,0 +1,43 @@
+---
+import Card from './Card.astro';
+import data from '../data/data.json';
+const { posts } = data;
+---
+
+<div >
+<section id="notes">
+	<h2>reads</h2>
+	<div class="notes-grid">
+		{posts.map((post) => (
+			<Card
+				href={post.url}
+				image={post.image}
+				title={post.title}
+			/>
+		))}
+	</div>
+</section>
+</div>
+
+<style>
+	#notes {
+		margin-bottom: 60px;
+	}
+
+	.notes-grid {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.notes-grid :global(.card) {
+		padding: 10px 10px 10px 0px;
+		width: 60%;
+		margin-bottom: 20px;
+	}
+
+	@media screen and (max-width: 600px) {
+		.notes-grid :global(.card) {
+			width: 90%;
+		}
+	}
+</style>

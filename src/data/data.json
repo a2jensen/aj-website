@@ -2,9 +2,9 @@
   "experience": [
     {
       "title": "Software Engineer Intern",
-      "company": "SDSC",
-      "dates": "Jun 2024 - Sep 2024",
-      "description": "Worked on backend services and data pipelines for TritonSEA."
+      "company": "Viasat",
+      "dates": "Jun 2026 - Sep 2026",
+      "description": ""
     },
     {
       "title": "Software Engineer Intern",
@@ -12,6 +12,12 @@
       "dates": "Oct 2024 - Jun 2025",
       "description": "Assisted with refactoring and improving internal platforms."
     }, 
+    {
+      "title": "Software Engineer Intern",
+      "company": "SDSC",
+      "dates": "Jun 2024 - Sep 2024",
+      "description": "Worked on backend services and data pipelines for TritonSEA."
+    },
     {
       "title": "Research Assistant",
       "company": "UC San Diego",
@@ -52,20 +58,20 @@
       "name": "Linux Cgroups Controller",
       "description": "Dynamic Resource Controller built in Golang to manage scheduling of high workload processes.",
       "url": "https://github.com/a2jensen/dynamic-resource-controller",
-      "image": "/images/golang.png",
+      "image": "/images/tux-kernel-linux.jpg",
       "tech": ["Golang, Linux Cgroups, Bash"]
     },
     {
       "name": "Care Watch",
       "description": "Implemented OpenClaw and a CV model on the edge to create a smart fall watch system.",
       "url": "https://devpost.com/software/carewatch-nwfrsl",
-      "image": "/images/golang.png",
+      "image": "/images/openclaw.png",
       "tech": ["Rubiks Pi 3, OpenClaw, TailScale, OpenCV, NextJs"]
     },
     {
       "name": "Server-Side Website",
       "description": "Website hosted on Apache. Learning server-side analytics with this project.",
-      "url": "https://angelo-j.xyz/",
+      "url": "https://angelo-j.com/",
       "image": "/images/135.png",
       "tech": ["Apache, Nodejs, Google Analytics, Matomo"]
     },
@@ -142,5 +148,7 @@
       "title": "",
       "image": "/images/tokyo-train.png"
     }
+  ], 
+  "posts" : [
   ]
 }

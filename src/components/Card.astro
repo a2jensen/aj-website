@@ -1,0 +1,85 @@
+---
+import { Image } from 'astro:assets';
+import { getImageMetadata } from '../scripts/getImageMetadata';
+
+type Props = {
+	href?: string;
+	image?: string;
+	title?: string;
+	description?: string;
+	tech?: string[];
+	external?: boolean;
+}
+
+const { href, image, title, description, tech, external = false } = Astro.props;
+---
+
+<a href={href} class="card" target={external ? '_blank' : undefined} rel={external ? 'noopener' : undefined}>
+	{image && (
+		<div class="card-image">
+			<Image src={getImageMetadata(image)!} alt={title} loading="lazy" />
+		</div>
+	)}
+	<div class="card-info">
+		<span class="card-title">{title}</span>
+	</div>
+	{description && <p class="card-desc">{description}</p>}
+	{tech && tech.length > 0 && <p class="card-tech">{tech.join(', ')}</p>}
+</a>
+
+<style>
+	.card {
+		text-decoration: none;
+		color: inherit;
+		border: 1px solid #e0e0e0;
+		border-radius: 8px;
+		overflow: hidden;
+		transition: box-shadow 0.2s;
+		display: block;
+	}
+
+	.card:hover {
+		box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+	}
+
+	.card-image {
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		background: #f5f5f5;
+		overflow: hidden;
+	}
+
+	.card-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.card-info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 12px 14px 0;
+	}
+
+	.card-title {
+		font-weight: 600;
+		font-size: 15px;
+		padding-bottom: 10px;
+	}
+
+	.card-desc {
+		padding: 4px 14px 14px;
+		margin: 0;
+		font-size: 13px;
+		opacity: 0.7;
+		line-height: 1.4;
+	}
+
+	.card-tech {
+		font-size: 10px;
+		padding: 0 14px 14px;
+		margin: 0;
+		opacity: 0.5;
+	}
+</style>

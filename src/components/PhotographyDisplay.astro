@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import { getImageMetadata } from '../scripts/getImageMetadata';
+import data from '../data/data.json';
+
+interface Props {
+	count?: number;
+}
+
+const { count = 3 } = Astro.props;
+
+const shuffled = [...data.art].sort(() => Math.random() - 0.5);
+const selected = shuffled.slice(0, count);
+---
+
+<div class="photo-column">
+	{selected.map((piece) => (
+		<div class="photo-item">
+			<Image src={getImageMetadata(piece.image)!} alt={piece.title} loading="lazy" />
+		</div>
+	))}
+</div>
+
+<style>
+	.photo-column {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	.photo-item img {
+		width: 100%;
+		height: auto;
+		border-radius: 6px;
+		display: block;
+	}
+</style>

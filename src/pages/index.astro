@@ -1,12 +1,13 @@
 ---
-import Main from '../components/Main.astro';
+import HeaderProfile from '../components/HeaderProfile.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import ProjectsCatalog from '../components/ProjectsCatalog.astro';
+import ExperienceList from '../components/ExperienceList.astro';
+import PhotographyCatalog from '../components/PhotographyCatalog.astro';
 ---
-
 <Layout>
-	<Main />
-	<script src="../scripts/analytics.js"></script>
+	<HeaderProfile/>
+	<ExperienceList />
+	<ProjectsCatalog />
+	<PhotographyCatalog />
 </Layout>

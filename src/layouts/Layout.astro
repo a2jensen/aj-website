@@ -1,39 +1,23 @@
+---
+import Navbar from '../components/Navbar.astro';
+import { Font } from 'astro:assets';
+import '../styles/global.css';
+---
 <!doctype html>
 <html lang="en">
 	<head>
-		<!-- Privacy-friendly analytics by Plausible -->
-		<script async src="https://plausible.io/js/pa-tAjs8hHM8fe8mUj01Qgjm.js"></script>
-		<script>
-		window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-		plausible.init()
-		</script>
-
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Angelo Jensen</title>
+		<Font cssVariable="--font-jetbrains-mono" preload />
 	</head>
 	<body>
-		<slot />
+		<Navbar />
+		<div class="page">
+			<slot />
+		</div>
+		<script src="../scripts/analytics.js"></script>
 	</body>
 </html>
-
-<style is:global>
-	*,
-	*::before,
-	*::after {
-		box-sizing: border-box;
-	}
-
-	html,
-	body {
-		margin: 0;
-		padding: 0;
-		width: 100%;
-		min-height: 100%;
-		background: #fff;
-		color: #111;
-		justify-content: left;
-	}
-</style>
