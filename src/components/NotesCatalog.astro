@@ -1,5 +1,4 @@
 ---
-import Card from './Card.astro';
 import { getCollection } from 'astro:content';
 
 const notes = (await getCollection('notes'))
@@ -9,14 +8,9 @@ const notes = (await getCollection('notes'))
 <div >
 <section id="notes">
 	<h2>reads</h2>
-	<div class="notes-grid">
+	<div class="notes-list">
 		{notes.map((note) => (
-			<Card
-				href={`/notes/${note.id}`}
-				image={note.data.image}
-				title={note.data.title}
-				description={note.data.description}
-			/>
+			<a href={`/notes/${note.id}`} class="note-link">{note.data.title}</a>
 		))}
 	</div>
 </section>
@@ -27,19 +21,22 @@ const notes = (await getCollection('notes'))
 		margin-bottom: 60px;
 	}
 
-	.notes-grid {
+	.notes-list {
 		display: flex;
 		flex-direction: column;
+		width: 60%;
 	}
 
-	.notes-grid :global(.card) {
-		padding: 10px 10px 10px 0px;
-		width: 60%;
-		margin-bottom: 20px;
+	.note-link {
+		color: inherit;
+		text-decoration: none;
+		font-size: 15px;
+		font-weight: 600;
+		padding: 8px 0;
 	}
 
 	@media screen and (max-width: 600px) {
-		.notes-grid :global(.card) {
+		.notes-list {
 			width: 90%;
 		}
 	}
