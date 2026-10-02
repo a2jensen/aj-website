@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { getImageMetadata } from '../../scripts/getImageMetadata';
+import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
 
 export async function getStaticPaths() {
 	const notes = await getCollection('notes');
@@ -13,7 +14,7 @@ export async function getStaticPaths() {
 }
 
 const { note } = Astro.props;
-const { title, description, pubDate, image } = note.data;
+const { title, description, pubDate, image, youtube, youtubeStart, youtubeEnd } = note.data;
 const { Content } = await render(note);
 const imageMetadata = image ? getImageMetadata(image) : undefined;
 ---
@@ -28,6 +29,7 @@ const imageMetadata = image ? getImageMetadata(image) : undefined;
 				<Image src={imageMetadata} alt={title} />
 			</div>
 		)}
+		{youtube && <YouTubeEmbed id={youtube} title={title} start={youtubeStart} end={youtubeEnd} />}
 		<section class="body">
 			<Content />
 		</section>

@@ -1,0 +1,44 @@
+---
+type Props = {
+	id: string;
+	title: string;
+	start?: number;
+	end?: number;
+}
+
+const { id, title, start, end } = Astro.props;
+
+// youtube-nocookie is YouTube's privacy-enhanced embed: no tracking cookies until play
+const params = new URLSearchParams();
+if (start !== undefined) params.set('start', String(start));
+if (end !== undefined) params.set('end', String(end));
+const query = params.toString();
+const src = `https://www.youtube-nocookie.com/embed/${id}${query ? `?${query}` : ''}`;
+---
+
+<div class="youtube">
+	<iframe
+		src={src}
+		title={title}
+		loading="lazy"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+		referrerpolicy="strict-origin-when-cross-origin"
+		allowfullscreen
+	></iframe>
+</div>
+
+<style>
+	.youtube {
+		margin-top: 20px;
+		border-radius: 8px;
+		overflow: hidden;
+		background: #000;
+	}
+
+	.youtube iframe {
+		display: block;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		border: 0;
+	}
+</style>

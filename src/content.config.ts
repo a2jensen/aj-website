@@ -2,6 +2,14 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
+// Optional YouTube embed shared by every collection: the video ID (the part after
+// watch?v=) plus optional start/end times in seconds to play only a clip.
+const youtubeFields = {
+	youtube: z.string().optional(),
+	youtubeStart: z.number().optional(),
+	youtubeEnd: z.number().optional(),
+};
+
 // One Markdown file per project; the filename is the URL slug (/projects/<slug>)
 // and the Markdown body holds the project's general notes.
 const projects = defineCollection({
@@ -13,6 +21,7 @@ const projects = defineCollection({
 		image: z.string(),
 		tech: z.array(z.string()),
 		order: z.number(),
+		...youtubeFields,
 	}),
 });
 
@@ -24,6 +33,7 @@ const art = defineCollection({
 		title: z.string(),
 		image: z.string(),
 		order: z.number(),
+		...youtubeFields,
 	}),
 });
 
@@ -36,6 +46,7 @@ const notes = defineCollection({
 		description: z.string().optional(),
 		pubDate: z.coerce.date(),
 		image: z.string().optional(),
+		...youtubeFields,
 	}),
 });
 

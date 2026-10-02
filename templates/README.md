@@ -15,4 +15,6 @@ The filename becomes the URL slug:
 - Images go in `src/images/`; reference them as `/images/<file>`.
 - `order` controls position on the projects/art grids (lower comes first).
 - Notes are sorted by `pubDate`, newest first. `description` and `image` are optional.
+- To embed a YouTube video, uncomment `youtube` and set it to the video ID (the part after
+  `watch?v=`). `youtubeStart`/`youtubeEnd` (seconds) limit it to a clip.
 - Fields are validated by `src/content.config.ts`, so a missing or misspelled field fails the build with an error.
