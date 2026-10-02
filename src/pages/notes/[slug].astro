@@ -1,0 +1,89 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { getImageMetadata } from '../../scripts/getImageMetadata';
+
+export async function getStaticPaths() {
+	const notes = await getCollection('notes');
+	return notes.map((note) => ({
+		params: { slug: note.id },
+		props: { note },
+	}));
+}
+
+const { note } = Astro.props;
+const { title, description, pubDate, image } = note.data;
+const { Content } = await render(note);
+const imageMetadata = image ? getImageMetadata(image) : undefined;
+---
+<Layout>
+	<article class="note">
+		<a href="/notes" class="back">← back to notes</a>
+		<h1>{title}</h1>
+		<p class="date">{pubDate.toISOString().slice(0, 10)}</p>
+		{description && <p class="description">{description}</p>}
+		{imageMetadata && (
+			<div class="note-image">
+				<Image src={imageMetadata} alt={title} />
+			</div>
+		)}
+		<section class="body">
+			<Content />
+		</section>
+	</article>
+</Layout>
+
+<style>
+	.note {
+		max-width: 720px;
+		margin-bottom: 60px;
+	}
+
+	.back {
+		font-size: 13px;
+		opacity: 0.6;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.back:hover {
+		opacity: 1;
+	}
+
+	h1 {
+		margin: 16px 0 4px;
+	}
+
+	.date {
+		margin: 0 0 8px;
+		font-size: 12px;
+		opacity: 0.5;
+	}
+
+	.description {
+		margin: 0 0 8px;
+		font-size: 15px;
+		line-height: 1.5;
+		opacity: 0.8;
+	}
+
+	.note-image {
+		margin-top: 20px;
+		border: 1px solid #e0e0e0;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+
+	.note-image img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.body {
+		margin-top: 24px;
+		font-size: 14px;
+		line-height: 1.6;
+	}
+</style>

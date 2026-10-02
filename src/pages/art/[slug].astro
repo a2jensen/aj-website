@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { getImageMetadata } from '../../scripts/getImageMetadata';
+
+export async function getStaticPaths() {
+	const art = await getCollection('art');
+	return art.map((piece) => ({
+		params: { slug: piece.id },
+		props: { piece },
+	}));
+}
+
+const { piece } = Astro.props;
+const { title, image } = piece.data;
+const { Content } = await render(piece);
+const imageMetadata = getImageMetadata(image);
+---
+<Layout>
+	<article class="piece">
+		<a href="/art" class="back">← back to art</a>
+		{title && <h1>{title}</h1>}
+		{imageMetadata && (
+			<div class="piece-image">
+				<Image src={imageMetadata} alt={title} />
+			</div>
+		)}
+		{piece.body?.trim() && (
+			<section class="notes">
+				<Content />
+			</section>
+		)}
+	</article>
+</Layout>
+
+<style>
+	.piece {
+		max-width: 900px;
+		margin-bottom: 60px;
+	}
+
+	.back {
+		font-size: 13px;
+		opacity: 0.6;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.back:hover {
+		opacity: 1;
+	}
+
+	h1 {
+		margin: 16px 0 8px;
+	}
+
+	.piece-image {
+		margin-top: 20px;
+		border-radius: 6px;
+		overflow: hidden;
+	}
+
+	.piece-image img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.notes {
+		margin-top: 24px;
+		font-size: 14px;
+		line-height: 1.6;
+	}
+</style>

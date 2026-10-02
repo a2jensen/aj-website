@@ -1,18 +1,21 @@
 ---
 import Card from './Card.astro';
-import data from '../data/data.json';
-const { posts } = data;
+import { getCollection } from 'astro:content';
+
+const notes = (await getCollection('notes'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <div >
 <section id="notes">
 	<h2>reads</h2>
 	<div class="notes-grid">
-		{posts.map((post) => (
+		{notes.map((note) => (
 			<Card
-				href={post.url}
-				image={post.image}
-				title={post.title}
+				href={`/notes/${note.id}`}
+				image={note.data.image}
+				title={note.data.title}
+				description={note.data.description}
 			/>
 		))}
 	</div>

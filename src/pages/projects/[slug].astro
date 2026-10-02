@@ -1,0 +1,99 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import { getImageMetadata } from '../../scripts/getImageMetadata';
+
+export async function getStaticPaths() {
+	const projects = await getCollection('projects');
+	return projects.map((project) => ({
+		params: { slug: project.id },
+		props: { project },
+	}));
+}
+
+const { project } = Astro.props;
+const { name, description, url, image, tech } = project.data;
+const { Content } = await render(project);
+const imageMetadata = getImageMetadata(image);
+---
+<Layout>
+	<article class="project">
+		<a href="/projects" class="back">← back to projects</a>
+		<h1>{name}</h1>
+		<p class="description">{description}</p>
+		{tech.length > 0 && <p class="tech">{tech.join(', ')}</p>}
+		{url && <a href={url} class="external" target="_blank" rel="noopener">{url} ↗</a>}
+		{imageMetadata && (
+			<div class="project-image">
+				<Image src={imageMetadata} alt={name} />
+			</div>
+		)}
+		{project.body?.trim() && (
+			<section class="notes">
+				<Content />
+			</section>
+		)}
+	</article>
+</Layout>
+
+<style>
+	.project {
+		max-width: 720px;
+		margin-bottom: 60px;
+	}
+
+	.back {
+		font-size: 13px;
+		opacity: 0.6;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.back:hover {
+		opacity: 1;
+	}
+
+	h1 {
+		margin: 16px 0 8px;
+	}
+
+	.description {
+		margin: 0 0 8px;
+		font-size: 15px;
+		line-height: 1.5;
+		opacity: 0.8;
+	}
+
+	.tech {
+		margin: 0 0 8px;
+		font-size: 12px;
+		opacity: 0.5;
+	}
+
+	.external {
+		font-size: 13px;
+		color: inherit;
+		opacity: 0.7;
+		word-break: break-all;
+	}
+
+	.project-image {
+		margin-top: 20px;
+		border: 1px solid #e0e0e0;
+		border-radius: 8px;
+		overflow: hidden;
+	}
+
+	.project-image img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.notes {
+		margin-top: 24px;
+		font-size: 14px;
+		line-height: 1.6;
+	}
+</style>

@@ -1,7 +1,10 @@
 ---
 import Card from './Card.astro';
-import data from '../data/data.json';
-const { projects } = data;
+import { getCollection } from 'astro:content';
+
+const projects = (await getCollection('projects'))
+	.sort((a, b) => a.data.order - b.data.order)
+	.map((project) => ({ slug: project.id, ...project.data }));
 
 // Build triangle rows: 2, 3, 4, 5, 5, 5...
 // If leftover can't fill the next row, append to current row
@@ -28,12 +31,12 @@ while (i < projects.length) {
 			<div class="projects-row" style={`grid-template-columns: repeat(${row.length}, 220px);`}>
 				{row.map((project) => (
 					<Card
-						href={project.url}
+						href={`/projects/${project.slug}`}
 						image={project.image}
 						title={project.name}
 						description={project.description}
 						tech={project.tech}
-						external={true}
+						external={false}
 					/>
 				))}
 			</div>
@@ -42,12 +45,12 @@ while (i < projects.length) {
 	<div class="projects-mobile-grid">
 		{projects.map((project) => (
 			<Card
-				href={project.url}
+				href={`/projects/${project.slug}`}
 				image={project.image}
 				title={project.name}
 				description={project.description}
 				tech={project.tech}
-				external={true}
+				external={false}
 			/>
 		))}
 	</div>

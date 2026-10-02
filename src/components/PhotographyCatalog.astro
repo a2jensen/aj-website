@@ -1,8 +1,11 @@
 ---
 import { Image } from 'astro:assets';
 import { getImageMetadata } from '../scripts/getImageMetadata';
-import data from '../data/data.json';
-const { art } = data;
+import { getCollection } from 'astro:content';
+
+const art = (await getCollection('art'))
+	.sort((a, b) => a.data.order - b.data.order)
+	.map((piece) => ({ slug: piece.id, ...piece.data }));
 
 // Build alternating wave rows:
 // 3,2,1 then 1,2,3, then repeat.
@@ -27,20 +30,20 @@ while (i < art.length) {
         {rows.map((row) => (
             <div class="art-row" style={`grid-template-columns: repeat(${row.length}, 360px);`}>
                 {row.map((piece) => (
-                    <div class="art-item">
+                    <a href={`/art/${piece.slug}`} class="art-item">
                         {<Image src={getImageMetadata(piece.image)!} height="300" width="1200" alt={piece.title} loading="lazy"/>}
                         <span class="art-title">{piece.title}</span>
-                    </div>
+                    </a>
                 ))}
             </div>
         ))}
     </div>
     <div class="art-grid">
         {art.map((piece) => (
-            <div class="art-item">
+            <a href={`/art/${piece.slug}`} class="art-item">
                 {<Image src={getImageMetadata(piece.image)!} alt={piece.title} loading="lazy"/>}
                 <span class="art-title">{piece.title}</span>
-            </div>
+            </a>
         ))}
     </div>
 </section>
@@ -64,6 +67,8 @@ while (i < art.length) {
 	}
 
 	.art-item {
+		color: inherit;
+		text-decoration: none;
 		display: flex;
 		flex-direction: column;
 		gap: 6px;

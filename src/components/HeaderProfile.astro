@@ -1,15 +1,20 @@
 ---
+import profile from '../data/profile.json';
+const { name, subtitle, bio, contact } = profile;
 ---
 <div>
 	<!-- Hero -->
 	<header id="hero">
-		<h1>Angelo Jensen</h1>
-		<p class="subtitle">Computer Science at UCSD</p>
-		<p class="bio">Currently a student at UCSD. Interests and experience currently lie in the domains of developing large scale distributed software systems, networking, AI tooling and building helpful tools for everyday use! </p>
+		<h1>{name}</h1>
+		<p class="subtitle">{subtitle}</p>
+		<p class="bio">{bio}</p>
 		<div class="contact">
-			<p>github: <a href="https://github.com/a2jensen" target="_blank" rel="noopener">a2jensen</a></p>
-			<p>email: <a href="mailto:angelojensen17@gmail.com">angelojensen17@gmail.com</a></p>
-			<p>linkedin: <a href="https://linkedin.com/in/angelo-jensen" target="_blank" rel="noopener">angelojensen</a></p>
+			{contact.map((link) => {
+				const external = !link.href.startsWith('mailto:');
+				return (
+					<p>{link.label}: <a href={link.href} target={external ? '_blank' : undefined} rel={external ? 'noopener' : undefined}>{link.text}</a></p>
+				);
+			})}
 		</div>
 	</header>
 </div>

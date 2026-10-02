@@ -1,0 +1,48 @@
+{
+  "name": "Angelo Jensen",
+  "subtitle": "Computer Science at UCSD",
+  "bio": "Currently a student at UCSD. Interests and experience currently lie in the domains of developing large scale distributed software systems, networking, AI tooling and building helpful tools for everyday use!",
+  "contact": [
+    {
+      "label": "github",
+      "text": "a2jensen",
+      "href": "https://github.com/a2jensen"
+    },
+    {
+      "label": "email",
+      "text": "angelojensen17@gmail.com",
+      "href": "mailto:angelojensen17@gmail.com"
+    },
+    {
+      "label": "linkedin",
+      "text": "angelojensen",
+      "href": "https://linkedin.com/in/angelo-jensen"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Software Engineer Intern",
+      "company": "Viasat",
+      "dates": "Jun 2026 - Sep 2026",
+      "description": "Full stack engineering + infra + testing network applications across multi orbit satellite networks."
+    },
+    {
+      "title": "Software Engineer Intern",
+      "company": "SDSC",
+      "dates": "Oct 2024 - Jun 2025",
+      "description": "Assisted with refactoring and improving internal platforms."
+    },
+    {
+      "title": "Software Engineer Intern",
+      "company": "SDSC",
+      "dates": "Jun 2024 - Sep 2024",
+      "description": "Worked on server side applications and data pipelines for TritonSEA."
+    },
+    {
+      "title": "Research Assistant",
+      "company": "UC San Diego",
+      "dates": "Sep 2024 - Aug 2025",
+      "description": "Worked on ASPEN, a Jupyter notebook extension for managing code clones."
+    }
+  ]
+}
