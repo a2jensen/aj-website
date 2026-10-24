@@ -9,6 +9,4 @@ image: "/images/your-image.png"
 # youtubeEnd: 45
 ---
 
-# Notes
-
 nothing here to read...

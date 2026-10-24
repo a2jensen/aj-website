@@ -4,6 +4,7 @@ import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { getImageMetadata } from '../../scripts/getImageMetadata';
 import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
+import profile from '../../data/profile.json';
 
 export async function getStaticPaths() {
 	const notes = await getCollection('notes');
@@ -22,6 +23,7 @@ const imageMetadata = image ? getImageMetadata(image) : undefined;
 	<article class="note">
 		<a href="/notes" class="back">← back to notes</a>
 		<h1>{title}</h1>
+		<p class="author">by {profile.name.toLowerCase()}</p>
 		<p class="date">{pubDate.toISOString().slice(0, 10)}</p>
 		{description && <p class="description">{description}</p>}
 		{imageMetadata && (
@@ -55,6 +57,12 @@ const imageMetadata = image ? getImageMetadata(image) : undefined;
 
 	h1 {
 		margin: 16px 0 4px;
+	}
+
+	.author {
+		margin: 0 0 4px;
+		font-size: 14px;
+		opacity: 0.7;
 	}
 
 	.date {
