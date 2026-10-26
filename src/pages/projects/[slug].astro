@@ -23,7 +23,7 @@ const imageMetadata = getImageMetadata(image);
 		<a href="/projects" class="back">← back to projects</a>
 		<h1>{name}</h1>
 		<p class="description">{description}</p>
-		{tech.length > 0 && <p class="tech">{tech.join(', ')}</p>}
+		{tech && tech.length > 0 && <p class="tech">{tech.join(', ')}</p>}
 		{url && <a href={url} class="external" target="_blank" rel="noopener">{url} ↗</a>}
 		{imageMetadata && (
 			<div class="project-image">

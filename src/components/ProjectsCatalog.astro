@@ -26,6 +26,7 @@ while (i < projects.length) {
 
 <section id="projects">
 	<h2>projects</h2>
+	<p class="projects-desc">a mix of my personal + class projects from undergrad</p>
 	<div class="projects-triangle">
 		{rows.map((row) => (
 			<div class="projects-row" style={`grid-template-columns: repeat(${row.length}, 220px);`}>
@@ -34,9 +35,6 @@ while (i < projects.length) {
 						href={`/projects/${project.slug}`}
 						image={project.image}
 						title={project.name}
-						description={project.description}
-						tech={project.tech}
-						external={false}
 					/>
 				))}
 			</div>
@@ -48,9 +46,6 @@ while (i < projects.length) {
 				href={`/projects/${project.slug}`}
 				image={project.image}
 				title={project.name}
-				description={project.description}
-				tech={project.tech}
-				external={false}
 			/>
 		))}
 	</div>
@@ -59,6 +54,16 @@ while (i < projects.length) {
 <style>
 	#projects {
 		margin-bottom: 60px;
+	}
+
+	#projects h2 {
+		margin-bottom: 6px;
+	}
+
+	.projects-desc {
+		margin: 0 0 20px;
+		font-size: 14px;
+		opacity: 0.7;
 	}
 
 	.projects-row {

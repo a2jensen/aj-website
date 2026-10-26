@@ -1,6 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import profile from './data/profile.json';
 
 // Optional YouTube embed shared by every collection: the video ID (the part after
 // watch?v=) plus optional start/end times in seconds to play only a clip.
@@ -17,9 +18,10 @@ const projects = defineCollection({
 	schema: z.object({
 		name: z.string(),
 		description: z.string(),
+		pubDate: z.coerce.date().optional(),
 		url: z.string().optional(),
 		image: z.string(),
-		tech: z.array(z.string()),
+		tech: z.array(z.string()).optional(),
 		order: z.number(),
 		...youtubeFields,
 	}),
@@ -32,6 +34,7 @@ const art = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		image: z.string(),
+		pubDate: z.coerce.date().optional(),
 		order: z.number(),
 		...youtubeFields,
 	}),
@@ -43,8 +46,9 @@ const notes = defineCollection({
 	loader: glob({ pattern: '*.md', base: './src/content/notes' }),
 	schema: z.object({
 		title: z.string(),
+		author: z.string().default(profile.name.toLowerCase()),
 		description: z.string().optional(),
-		pubDate: z.coerce.date(),
+		pubDate: z.coerce.date().optional(),
 		image: z.string().optional(),
 		...youtubeFields,
 	}),
