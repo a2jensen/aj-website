@@ -3,11 +3,28 @@ import HeaderProfile from '../components/HeaderProfile.astro';
 import Layout from '../layouts/Layout.astro';
 import ProjectsCatalog from '../components/ProjectsCatalog.astro';
 import ExperienceList from '../components/ExperienceList.astro';
+import HomeReads from '../components/HomeReads.astro';
 import PhotographyCatalog from '../components/PhotographyCatalog.astro';
 ---
 <Layout>
 	<HeaderProfile/>
-	<ExperienceList />
+	<div class="overview">
+		<ExperienceList />
+		<HomeReads />
+	</div>
 	<ProjectsCatalog />
 	<PhotographyCatalog />
 </Layout>
+
+<style>
+	/* Two equal boxes, wider than .page so the right edge meets the nav */
+	@media screen and (min-width: 601px) {
+		.overview {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 48px;
+			width: min(calc(100vw - 160px), 1280px);
+			margin-bottom: 60px;
+		}
+	}
+</style>

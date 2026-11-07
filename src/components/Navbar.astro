@@ -1,6 +1,6 @@
 <nav id="navbar">
     <a href="/" class="nav-home">home</a>
-	<a href="/notes" class="nav-home">notes</a>
+	<a href="/notes" class="nav-home nav-notes">notes</a>
     <a href="/projects" class="nav-home">projects</a>
     <a href="/art" class="nav-home">art</a>
 </nav>
@@ -28,6 +28,13 @@
 
 	.nav-home:hover {
 		opacity: 0.6;
+	}
+
+	/* Desktop reaches notes through the reads column on the home page */
+	@media screen and (min-width: 601px) {
+		.nav-notes {
+			display: none;
+		}
 	}
 
 	@media screen and (max-width: 600px) {

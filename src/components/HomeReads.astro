@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import Paged from './Paged.astro';
+import { chunk } from '../scripts/chunk';
+
+const notes = (await getCollection('notes'))
+	.sort((a, b) => (b.data.pubDate?.valueOf() ?? 0) - (a.data.pubDate?.valueOf() ?? 0));
+const pages = chunk(notes, 6);
+---
+<!-- Reads: desktop only; phones reach notes through the /notes page -->
+<section id="reads">
+	<h2>reads</h2>
+	<Paged>
+		{pages.map((page, i) => (
+			<div data-page data-active={i === 0 ? '' : undefined}>
+				{page.map((note) => (
+					<a href={`/notes/${note.id}`} class="note-link">{note.data.title}</a>
+				))}
+			</div>
+		))}
+	</Paged>
+</section>
+
+<style>
+	#reads {
+		display: none;
+	}
+
+	.note-link {
+		display: block;
+		color: inherit;
+		text-decoration: none;
+		font-size: 15px;
+		font-weight: 600;
+		padding: 8px 0;
+	}
+
+	/* Lines the first title up with the first experience entry */
+	[data-page] {
+		margin-top: -8px;
+	}
+
+	@media screen and (min-width: 601px) {
+		#reads {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+</style>

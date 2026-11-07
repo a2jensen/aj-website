@@ -1,0 +1,88 @@
+---
+// Desktop: shows one [data-page] child at a time, with prev/next below. All pages
+// share one grid cell, so the box stays as tall as the tallest page.
+// Phones: pages render in normal flow and the controls are hidden.
+---
+
+<div class="paged" data-paged>
+	<div class="paged-pages">
+		<slot />
+	</div>
+	<div class="paged-controls">
+		<button type="button" data-prev disabled>← prev</button>
+		<button type="button" data-next>next →</button>
+	</div>
+</div>
+
+<script>
+	document.querySelectorAll('[data-paged]').forEach((root) => {
+		const pages = [...root.querySelectorAll<HTMLElement>('[data-page]')];
+		const prev = root.querySelector<HTMLButtonElement>('[data-prev]')!;
+		const next = root.querySelector<HTMLButtonElement>('[data-next]')!;
+		let current = 0;
+
+		const show = (index: number) => {
+			current = index;
+			pages.forEach((page, i) => page.toggleAttribute('data-active', i === current));
+			prev.disabled = current === 0;
+			next.disabled = current === pages.length - 1;
+		};
+
+		prev.addEventListener('click', () => show(current - 1));
+		next.addEventListener('click', () => show(current + 1));
+		show(0);
+	});
+</script>
+
+<style>
+	.paged-controls {
+		display: none;
+	}
+
+	@media screen and (min-width: 601px) {
+		.paged {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.paged-pages {
+			flex: 1;
+			display: grid;
+		}
+
+		.paged-pages > :global([data-page]) {
+			grid-area: 1 / 1;
+		}
+
+		.paged-pages > :global([data-page]:not([data-active])) {
+			visibility: hidden;
+		}
+
+		.paged-controls {
+			display: flex;
+			gap: 16px;
+			margin-top: 4px;
+		}
+	}
+
+	button {
+		padding: 0;
+		border: 0;
+		background: none;
+		color: inherit;
+		font: inherit;
+		font-size: 14px;
+		cursor: pointer;
+		opacity: 0.6;
+	}
+
+	button:hover:not(:disabled) {
+		opacity: 1;
+	}
+
+	button:disabled {
+		cursor: default;
+		opacity: 0.3;
+	}
+</style>
